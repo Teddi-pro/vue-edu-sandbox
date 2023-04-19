@@ -19,6 +19,13 @@
   <button v-on:click="btnForm">Отправить</button>
   <textarea v-model="jobs" type="text" name="xp" placeholder="Опыт работы"></textarea>
 </form>
+<div>
+  <ul>
+    <li v-for="(item, index) in jobArray">
+       Профессия-{{ ++index }}:{{ item }}
+    </li>
+  </ul>
+</div>
 <table border="1" height="50" width="50">
   <caption>Таблица</caption>
   <tr>
@@ -46,6 +53,7 @@ const person = reactive({
   xp:""
 })
 
+
 const personData = ref({
   name:"",
   surname:"",
@@ -63,12 +71,19 @@ const NameSurPat = computed({
   }
 })
 
+
 const jobs = computed({
   get() {
-    return person.value.xp.join()
+    return person.xp 
   },
   set(jobsList) {
-     person.value.xp = jobsList.split(',')
+     person.xp = jobsList
+  }
+})
+
+const jobArray = computed({
+  get() {
+    return personData.value.xp.split(',')
   }
 })
 
