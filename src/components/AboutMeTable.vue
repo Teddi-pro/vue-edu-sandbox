@@ -1,5 +1,5 @@
 <template>
-    <table border="1" height="50" width="50">
+    <table>
   <caption>Таблица</caption>
   <tr>
     <th>ФИО</th>
@@ -10,6 +10,22 @@
    <tr><td>{{ NameSurPat }}</td><td>{{ personData.age }}</td><td>{{ personData.sex }}</td><td>{{ personData.xp }}</td></tr>
     </table>
 </template>
+
+<style>
+  table {
+    border: 5px solid green;
+    width: 400px;
+    height: 200px;
+  }
+  th {
+    border: 3px solid green;
+    height: 50px;
+  }
+  td {
+    color: rgb(247, 0, 255);
+    border: 5px solid green;
+  }
+</style>
 
 <script setup>
 import { computed } from 'vue';

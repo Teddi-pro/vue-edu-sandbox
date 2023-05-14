@@ -4,8 +4,15 @@
 <router-link to="/AboutMe"><button>About me</button></router-link>
 </template>
 
-<script>
+<style>
+    body {
+        background-color: black;
+        height: auto;
+        width: auto;
+    }
+</style>
 
+<script>
 export default {
 
 }
