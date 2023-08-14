@@ -27,7 +27,7 @@
     <th>Пол</th>
     <th>Опыт работы</th>
    </tr>
-   <tr><td>{{ NameSurPat }}</td><td>{{ personData.age }}</td><td>{{ personData.sex }}</td><td>{{ personData.xp }}</td></tr>
+   <tr><td>{{ nameSurPat }}</td><td>{{ personData.age }}</td><td>{{ personData.sex }}</td><td>{{ personData.xp }}</td></tr>
    
 
 </table>
@@ -57,7 +57,7 @@ const personData = ref({
 
 const btnForm = () => personData.value = JSON.parse(JSON.stringify(person))
 
-const NameSurPat = computed({
+const nameSurPat = computed({
   get() {
     return personData.value.name + ' ' + personData.value.surname + ' ' + personData.value.patronymic
   }
