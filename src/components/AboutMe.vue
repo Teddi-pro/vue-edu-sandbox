@@ -7,15 +7,15 @@
 <form @submit.prevent>
     <legend>Форма для заполнения</legend>
     <div>Имя</div>
-  <input v-model="Person.name" type="text" name="name" required="required">
+  <input v-model="person.name" type="text" name="name" required="required">
   <div>Фамилия</div>
-  <input v-model="Person.surname" type="text" name="surname">
+  <input v-model="person.surname" type="text" name="surname">
   <div>Отчество</div>
-  <input v-model="Person.patronymic" type="text" name="patronymic">
+  <input v-model="person.patronymic" type="text" name="patronymic">
   <div>Возраст</div>
-  <input v-model="Person.age" type="text" name="age">
+  <input v-model="person.age" type="text" name="age">
   <div>Пол</div>
-  <input v-model="Person.sex" type="text" name="sex">
+  <input v-model="person.sex" type="text" name="sex">
   <button v-on:click="btnForm">Отправить</button>
 </form>
 <table border="1" height="50" width="50">
@@ -27,7 +27,7 @@
     <th>Возраст</th>
     <th>Пол</th>
    </tr>
-   <tr><td>{{ PersonData.name }}</td><td>{{ PersonData.surname }}</td><td>{{ PersonData.patronymic }}</td><td>{{ PersonData.age }}</td><td>{{ PersonData.sex }}</td></tr>
+   <tr><td>{{ personData.name }}</td><td>{{ personData.surname }}</td><td>{{ personData.patronymic }}</td><td>{{ personData.age }}</td><td>{{ personData.sex }}</td></tr>
    
 
 </table>
@@ -37,7 +37,7 @@
 <script setup>
 import {ref, reactive} from 'vue'
 
-const Person = reactive({
+const person = reactive({
   name:"",
   surname:"",
   patronymic:"",
@@ -45,7 +45,7 @@ const Person = reactive({
   sex:""
 })
 
-const PersonData = ref({
+const personData = ref({
   name:"",
   surname:"",
   patronymic:"",
@@ -53,7 +53,7 @@ const PersonData = ref({
   sex:""
 })
 
-const btnForm = () => PersonData.value = JSON.parse(JSON.stringify(Person))
+const btnForm = () => personData.value = JSON.parse(JSON.stringify(person))
 
 
 
