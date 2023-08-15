@@ -21,7 +21,7 @@
 </form>
 <div>
   <ul>
-    <li v-for="(item, index) in jobArray">
+    <li v-for="(item, index) in jobArray" :key="index">
        Профессия-{{ ++index }}:{{ item }}
     </li>
   </ul>
